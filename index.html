@@ -3,9 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <title>퍼블리싱 가이드</title>
 </head>
 <body>
-    테스트
+    <div id="wrap">
+        <div id="header">
+            <h1 class="logo">OPENOBJECT Coding Convention</h1>
+            <nav id="nav">
+                <ul>
+                    <li><a href="javascript:;">HTML</a></li>
+                    <li><a href="javascript:;">CSS</a></li>
+                </ul>
+            </nav>
+        </div>
+        <aside id="aside">
+            <nav class="side-nav">
+                <ul>
+                    <li><a href="javascript:;">HTML 코드 작성 규칙</a></li>
+                    <li class="active"><a href="javascript:;">CSS 코드 작성 규칙</a>
+                        <ul>
+                            <li><a href="javascript:;">기본규칙</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <div id="container">            
+            <h2>CSS 코드 작성 규칙</h2>
+            <article>
+                <h3>기본 규칙</h3>
+                <section>
+                    <h4>W3C Validation</h4>
+                    <p>CSS는 사용 가능한 Hack과 CSS3 속성을 제외하고 W3C Validation을 통과해야 한다.</p>
+                </section>            
+                <section>
+                    <h4>B. 영문 소문자 사용</h4>
+                    <p>모든 속성은 영문 소문자로만 작성한다</p>
+                </section>
+                <section>
+                    <h4>C. 따옴표 사용 범위</h4>
+                    <p>공백이 포함된 폰트명, 한글 폰트명, 문자열 데이터 타입, filter 속성의 파라미터값은 작은따옴표(' ')로 감싸며,
+                        @charset 선언 시에는 속성 값을 큰따옴표(" ")로 감싼다. 그 외의 경우에는 따옴표를 사용하지 않는다. filter
+                        속성의 파라미터값에 따옴표를 사용하는 것은 선택사항이다.</p>                        
+                    <p>url 데이터 타입에는 작은 따옴표를 사용하지 않는다.</p>
+                </section>
+            </article>
+        </div>
+    </div>
 </body>
 </html>
