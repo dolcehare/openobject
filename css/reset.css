@@ -6,9 +6,8 @@ menu, nav, output, ruby, section, summary, time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-    font-size: 100%;
+    font-size: 14px;
     font-family: 'Noto Sans Korean', sans-serif;
-	/* font: inherit; */
     vertical-align: baseline;
     box-sizing: border-box;
 }
@@ -34,3 +33,4 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+h1,h2,h3,h4,h5,h6 {font-weight: normal;}

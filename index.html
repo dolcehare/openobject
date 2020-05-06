@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Syntax HighLighter V4-->
+    <link href="http://servername/syntaxhighlighter/theme.css" rel="stylesheet" type="text/css">
+    <script src="http://servername/syntaxhighlighter/syntaxhighlighter.js" type="text/javascript"></script>
+    <script src="http://servername/syntaxhighlighter/syntaxhighlighter.js.map" type="text/javascript"></script>
     <link rel="stylesheet" type="text/css" href="css/common.css">
     <title>퍼블리싱 가이드</title>
 </head>
@@ -84,18 +88,18 @@
                                     filter: progid:DXImageTransform.Microsoft.AlphaIma
                                     geLoader(src='bg.png', sizingMethod='scale')
                                 </td>
-                                <tr>
-                                    <td>background: url(<span class="wrong">"</span>bg.gif<span class="wrong">"</span>) no-repeat</td>
-                                    <td>background: url(bg.gif) no-repeat</td>
-                                </tr>
-                                <tr>
-                                    <td>content: <span class="wrong">"</span>Chapter: <span class="wrong">"</span></td>
-                                    <td>content: 'Chapter: '</td>
-                                </tr>
-                                <tr>
-                                    <td>@charset <span class="wrong">"</span>utf-8<span class="wrong">"</span>;</td>
-                                    <td>@charset "utf-8";</td>
-                                </tr>
+                            </tr>
+                            <tr>
+                                <td>background: url(<span class="wrong">"</span>bg.gif<span class="wrong">"</span>) no-repeat</td>
+                                <td>background: url(bg.gif) no-repeat</td>
+                            </tr>
+                            <tr>
+                                <td>content: <span class="wrong">"</span>Chapter: <span class="wrong">"</span></td>
+                                <td>content: 'Chapter: '</td>
+                            </tr>
+                            <tr>
+                                <td>@charset <span class="wrong">"</span>utf-8<span class="wrong">"</span>;</td>
+                                <td>@charset "utf-8";</td>
                             </tr>
                         </tbody>
                     </table>
@@ -122,21 +126,194 @@
                                 #content {border:1px solid #000}<br>
                                 #content .class {color:#000}
                             </td>
-                            <tr>
-                                <td>
-                                    @media all and (minwidth:480px) {.vod_wrp2{height:278px}}</td>
-                                <td>
-                                    @media all and (min-width:480px) {<br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;.vod_wrp2 {height:278px}<br>
-                                    }</td>
-                            </tr>
+                        </tr>
+                        <tr>
+                            <td>
+                                @media all and (minwidth:480px) {.vod_wrp2{height:278px}}</td>
+                            <td>
+                                @media all and (min-width:480px) {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;.vod_wrp2 {height:278px}<br>
+                                }
+                            </td>
                         </tr>
                     </tbody>
                 </table>
             </article>
             <article>
                 <h3>공백</h3>
-                <h4>선택자 간 공백 제거</h4>
+                <section>
+                    <h4>선택자 간 공백 제거</h4>
+                    <p>쉼표로 구분되는 선택자 간 공백은 제거한다.</p>
+                    <table>
+                        <caption>선택자 간 공백 제거 예</caption>
+                        <thead>
+                            <tr>
+                                <th>잘못된 예</th>
+                                <th>올바른 예</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    a: hover,<span class="wrong">^</span>a: active,<span class="wrong">^</span>a: focus {textdecoration: underline}
+                                </td>
+                                <td>
+                                    a: hover,a: active,a: focus {text-decoration: underline}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section>
+                    <h4>속성 간 공백 제거</h4>
+                    <p>속성 간 공백 및 속성 값 사이 공백은 제거한다.</p>
+                    <table>
+                        <caption>속성 간 공백 제거 예</caption>
+                        <thead>
+                            <tr>
+                                <th>잘못된 예</th>
+                                <th>올바른 예</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    .class p {color: #000;<span class="wrong">^</span>line-height: 18px}<br>.class p {color: #000<span class="wrong">^</span>;line-height: 18px}
+                                </td>
+                                <td>
+                                    .class p {color: #000;line-height: 18px}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>font-family: '돋움',<span class="wrong">^</span>dotum;</td>
+                                <td>font-family: '돋움',dotum;</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section>
+                    <h4>중괄호 공백 제거</h4>
+                    <ul>
+                        <li>중괄호 바깥쪽은 한칸의 공백을 둔다.</li>
+                        <li>중괄호 안쪽 좌, 우 공백은 제거한다.</li>
+                    </ul>
+                    <table>
+                        <caption>중괄호 공백 제거 예</caption>
+                        <thead>
+                            <tr>
+                                <th>잘못된 예</th>
+                                <th>올바른 예</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    .class p{color:#000}
+                                </td>
+                                <td>
+                                    .class p {color: #000}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>.class p {<span class="wrong">^</span>color:#000; line-height:18px<span class="wrong">^</span>} </td>
+                                <td>.class p {color: #000;line-height: 18px}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </article>
+            <article>
+                <h3>빈 줄</h3>
+                <p>의미 있는 객체를 구분하기 위하여 코드 그룹 간 1줄씩 빈 줄을 넣을 수 있다. 단, 빈 줄의 간격은 1줄을 초과하지 않게 한다</p>
+                <table>
+                    <caption>빈 줄 사용 예</caption>
+                    <thead>
+                        <tr>
+                            <th>잘못된 예</th>
+                            <th>올바른 예</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                /* 의미 있는 그룹 1 */<br>
+                                .class1{border:1px solid #000}<br>
+                                .class1 img{border:1px solid #000}<br>
+                                <span class="wrong">빈 줄</span><br>
+                                <span class="wrong">빈 줄</span><br>
+                                /* 의미 있는 그룹 2 */<br>
+                                .class2{border:1px solid #000}<br>
+                                .class2 img{border:1px solid #000}
+                            </td>
+                            <td>
+                                /* 의미 있는 그룹 1 */<br>
+                                .class1{border:1px solid #000}<br>
+                                .class1 img{border:1px solid #000}<br>
+                                빈 줄<br>
+                                /* 의미 있는 그룹 2 */<br>
+                                .class2{border:1px solid #000}<br>
+                                .class2 img{border:1px solid #000}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+            <article>
+                <h3>줄 바꿈</h3>
+                <p>속성, 속성 값 사이 줄 바꿈은 허용하지 않는다.단, 선택자와 중괄호”{}”가 중첩되는 경우 예외</p>
+                <table>
+                    <caption></caption>
+                    <thead>
+                        <tr>
+                            <th>잘못된 예</th>
+                            <th>올바른 예</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="2">
+                                .class1,<br>
+                                .class2,<br>
+                                .class3 {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;width: <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;100px;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;color: <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#000<br>
+                                }
+                            </td>
+                            <td>
+                                .class1,.class2,.class3 {width: 100px;color: #000}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                .class1,<br>
+                                .class2,<br>
+                                .class3 {width: 100px;color: #000}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @media print {#header {display: none}}
+                            </td>
+                            <td>
+                                @media print {<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;#header {display: none}<br>
+                                }
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+            <article>
+                <h3>인코딩</h3>
+                <p>
+                    폰트 이름이 영문이 아닐 때 이를 브라우저에서 바르게 표현하고, HTML에서 불러온 스타일을 제대로
+                    렌더링하려면 반드시 CSS 인코딩을 선언해야 한다. HTML과 동일한 인코딩을 문서 첫 줄에 공백 없이
+                    선언한다. 작성 예는 다음과 같다.
+                    @charset "utf-8";
+                    파일을 저장할 때는 반드시 선언한 인코딩과 동일한 인코딩을 선택한다.
+                </p>
             </article>
         </div>
     </div>
