@@ -38,16 +38,105 @@
                     <p>CSS는 사용 가능한 Hack과 CSS3 속성을 제외하고 W3C Validation을 통과해야 한다.</p>
                 </section>            
                 <section>
-                    <h4>B. 영문 소문자 사용</h4>
+                    <h4>영문 소문자 사용</h4>
                     <p>모든 속성은 영문 소문자로만 작성한다</p>
+                    <table>
+                        <caption>소문자 작성 예</caption>
+                        <thead>
+                            <tr>
+                                <th>잘못된 예</th>
+                                <th>올바른 예</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>.class {<span class="wrong">Font-Family</span>: AppleGothic} </td>
+                                <td>.class {font-family: AppleGothic}</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </section>
                 <section>
-                    <h4>C. 따옴표 사용 범위</h4>
+                    <h4>따옴표 사용 범위</h4>
                     <p>공백이 포함된 폰트명, 한글 폰트명, 문자열 데이터 타입, filter 속성의 파라미터값은 작은따옴표(' ')로 감싸며,
                         @charset 선언 시에는 속성 값을 큰따옴표(" ")로 감싼다. 그 외의 경우에는 따옴표를 사용하지 않는다. filter
                         속성의 파라미터값에 따옴표를 사용하는 것은 선택사항이다.</p>                        
                     <p>url 데이터 타입에는 작은 따옴표를 사용하지 않는다.</p>
+                    <table>
+                        <caption>따옴표 사용 예</caption>
+                        <thead>
+                            <tr>
+                                <th>잘못된 예</th>
+                                <th>올바른 예</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>font-family: <span class="wrong">돋움</span></td>
+                                <td>font-family: '돋움'</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    filter: progid:DXImageTransform.Microsoft.AlphaIma
+                                    geLoader(src=<span class="wrong">"</span>bg.png<span class="wrong">"</span>, sizingMethod=<span class="wrong">"</span>scale<span class="wrong">"</span>)
+                                </td>
+                                <td>
+                                    filter: progid:DXImageTransform.Microsoft.AlphaIma
+                                    geLoader(src='bg.png', sizingMethod='scale')
+                                </td>
+                                <tr>
+                                    <td>background: url(<span class="wrong">"</span>bg.gif<span class="wrong">"</span>) no-repeat</td>
+                                    <td>background: url(bg.gif) no-repeat</td>
+                                </tr>
+                                <tr>
+                                    <td>content: <span class="wrong">"</span>Chapter: <span class="wrong">"</span></td>
+                                    <td>content: 'Chapter: '</td>
+                                </tr>
+                                <tr>
+                                    <td>@charset <span class="wrong">"</span>utf-8<span class="wrong">"</span>;</td>
+                                    <td>@charset "utf-8";</td>
+                                </tr>
+                            </tr>
+                        </tbody>
+                    </table>
                 </section>
+            </article>
+            <article>
+                <h3>들여 쓰기</h3>
+                <p>CSS 코드를 작성할 때는 들여쓰기를 하지 않는다.단, 중괄호”{}”가 중첩되는 경우 예외</p>
+                <table>
+                    <caption>들여 쓰기 사용 예</caption>
+                    <thead>
+                        <tr>
+                            <th>잘못된 예</th>
+                            <th>올바른 예</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                #content {border:1px solid #000}<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;#content .class {color:#000}
+                            </td>
+                            <td>
+                                #content {border:1px solid #000}<br>
+                                #content .class {color:#000}
+                            </td>
+                            <tr>
+                                <td>
+                                    @media all and (minwidth:480px) {.vod_wrp2{height:278px}}</td>
+                                <td>
+                                    @media all and (min-width:480px) {<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;.vod_wrp2 {height:278px}<br>
+                                    }</td>
+                            </tr>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+            <article>
+                <h3>공백</h3>
+                <h4>선택자 간 공백 제거</h4>
             </article>
         </div>
     </div>
